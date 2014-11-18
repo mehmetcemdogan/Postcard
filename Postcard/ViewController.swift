@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageLabel2: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
     @IBOutlet var myView: UIView!
@@ -32,13 +33,22 @@ class ViewController: UIViewController {
 
         
         messageLabel.hidden = false
+  
+        messageLabel2.hidden = false
+        messageLabel2.text = enterNameTextField.text
+        messageLabel2.textColor = UIColor.blueColor()
+        
+        
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.redColor()
         
         enterMessageTextField.text = ""
    // resignFirstResponder, klavyenin gerektiği zaman çıkmasını sağlıyor.
         enterMessageTextField.resignFirstResponder()
-   
+        
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
     
     }
